@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>NetologyExample</groupId>
+  <artifactId>NetologyExample</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>NetologyExample TeamCity DSL</name>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jetbrains.teamcity</groupId>
+        <artifactId>teamcity-configs-dsl-kotlin</artifactId>
+        <version>${teamcity.dsl.version}</version>
+        <configuration>
+          <format>kotlin</format>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate-configs</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.teamcity</groupId>
+      <artifactId>configs-dsl-kotlin-plugins</artifactId>
+      <version>${teamcity.dsl.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.teamcity</groupId>
+      <artifactId>configs-dsl-kotlin</artifactId>
+      <version>${teamcity.dsl.version}</version>
+    </dependency>
+  </dependencies>
+</project>
